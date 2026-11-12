@@ -1,256 +1,372 @@
 /**
  * Rasul Khan Personal Portfolio
- * Main Client-Side Controller (Vanilla ES6 + Modern Web APIs)
- * Compatibility: Pure static GitHub Pages hosting
+ * Static Client-Side Controller (Pure Vanilla ES6, GitHub Pages Ready)
  */
 
-// 1. Client-side Skeleton Loading Screen Dismissal (Requirement R3)
-(function initSkeletonLoader() {
-  const minDisplayTime = 400; // Minimum display time (ms) to prevent jarring visual flash
-  const maxSafetyTimeout = 1500; // Safety fallback timeout so content is never trapped
-  const startTime = Date.now();
+(function () {
+  'use strict';
 
-  function dismissSkeleton() {
-    const skeleton = document.getElementById('skeleton-screen');
-    const loader = document.getElementById('ftco-loader');
+  const prefersReducedMotion = () =>
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (skeleton && !skeleton.classList.contains('skeleton-hidden')) {
+  // 1. Initial Skeleton Screen Dismissal & Per-Image Shimmer Resolution
+  (function initSkeletonLoaders() {
+    const minDisplayTime = 220;
+    const maxSafetyTimeout = 900;
+    const startTime = Date.now();
+    let dismissed = false;
+
+    function dismissSkeleton() {
+      if (dismissed) return;
+      dismissed = true;
+
+      const skeleton = document.getElementById('skeleton-screen');
+      if (!skeleton) return;
+
       const elapsed = Date.now() - startTime;
-      const remainingTime = Math.max(0, minDisplayTime - elapsed);
+      const delay = prefersReducedMotion() ? 0 : Math.max(0, minDisplayTime - elapsed);
 
-      setTimeout(function() {
-        skeleton.classList.add('skeleton-hidden');
-        skeleton.classList.add('hidden');
+      setTimeout(() => {
+        skeleton.classList.add('skeleton-hidden', 'hidden');
         skeleton.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('is-loading');
-        document.body.classList.add('is-loaded');
-
-        // Cleanup from DOM flow after transition
-        setTimeout(function() {
+        setTimeout(() => {
           skeleton.style.display = 'none';
-        }, 450);
-      }, remainingTime);
+        }, 380);
+      }, delay);
     }
 
-    if (loader && loader.classList.contains('show')) {
-      loader.classList.remove('show');
-    }
-  }
-
-  // Primary trigger: window 'load' event (stylesheets, fonts, and assets ready)
-  window.addEventListener('load', dismissSkeleton);
-
-  // Fallback trigger: safety timeout in case of network latency
-  setTimeout(dismissSkeleton, maxSafetyTimeout);
-})();
-
-// 2. High-Performance IntersectionObserver for Scroll-Triggered Reveals (Requirement R3)
-(function initScrollReveals() {
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-          entry.target.classList.add('ftco-animated');
-          entry.target.classList.add('fadeInUp');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.12
-    });
-
-    document.querySelectorAll('.reveal-on-scroll, .ftco-animate').forEach(function(el) {
-      revealObserver.observe(el);
-    });
-  } else {
-    // Fallback if IntersectionObserver is unsupported
-    document.querySelectorAll('.reveal-on-scroll, .ftco-animate').forEach(function(el) {
-      el.classList.add('is-revealed');
-      el.classList.add('ftco-animated');
-    });
-  }
-})();
-
-// 3. Hardware-Accelerated Counter Roll Animation via requestAnimationFrame (Requirement R3)
-(function initStatCounters() {
-  const counterSection = document.getElementById('section-counter');
-  if (!counterSection) return;
-
-  let animated = false;
-
-  function triggerCounterRoll() {
-    if (animated) return;
-    animated = true;
-
-    const counterElements = counterSection.querySelectorAll('.number[data-number]');
-    counterElements.forEach(function(numEl) {
-      const target = parseInt(numEl.getAttribute('data-number'), 10) || 0;
-      const duration = 1600; // ms
-      const startTime = performance.now();
-
-      function updateCounter(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Exponential ease-out curve
-        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-        const currentVal = Math.floor(ease * target);
-        numEl.textContent = currentVal.toLocaleString();
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          numEl.textContent = target.toLocaleString();
-        }
-      }
-      requestAnimationFrame(updateCounter);
-    });
-  }
-
-  if ('IntersectionObserver' in window) {
-    const counterObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          triggerCounterRoll();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
-
-    counterObserver.observe(counterSection);
-  } else {
-    triggerCounterRoll();
-  }
-})();
-
-// 4. Smooth Scrolling Navigation Interceptor (Requirement R3)
-(function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
-
-      e.preventDefault();
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-
-      // Auto-collapse mobile navbar after clicking a section link
-      const navCollapse = document.getElementById('ftco-nav');
-      if (navCollapse && navCollapse.classList.contains('show')) {
-        const toggler = document.querySelector('.navbar-toggler');
-        if (toggler) toggler.click();
-      }
-    });
-  });
-})();
-
-// 5. Mobile Navbar Hamburger Toggle
-(function initMobileNav() {
-  document.querySelectorAll('.navbar-toggler').forEach(function(toggler) {
-    toggler.addEventListener('click', function() {
-      const targetSelector = this.getAttribute('data-target') || '#ftco-nav';
-      const target = document.querySelector(targetSelector);
-      if (target) {
-        target.classList.toggle('show');
-      }
-    });
-  });
-})();
-
-// 6. Role Typing Animation (Cycling through specified roles)
-(function initTypingAnimation() {
-  const typingElement = document.getElementById('typing-animation');
-  if (!typingElement) return;
-
-  const roles = [
-    'Data Analyst',
-    'Data operation analyst',
-    'Data Scientist',
-    'Business Analyst',
-    'BI Developer'
-  ];
-
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function typeTick() {
-    const currentRole = roles[roleIndex];
-
-    if (isDeleting) {
-      typingElement.textContent = currentRole.substring(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeTick, 400);
-        return;
-      }
-      setTimeout(typeTick, 50);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      dismissSkeleton();
     } else {
-      typingElement.textContent = currentRole.substring(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === currentRole.length) {
-        isDeleting = true;
-        setTimeout(typeTick, 2200);
-        return;
-      }
-      setTimeout(typeTick, 110);
+      document.addEventListener('DOMContentLoaded', dismissSkeleton, { once: true });
     }
-  }
+    window.addEventListener('load', dismissSkeleton);
+    setTimeout(dismissSkeleton, maxSafetyTimeout);
 
-  typeTick();
-})();
+    // Per-image skeleton shimmer cleanup
+    document.querySelectorAll('.img-skeleton img').forEach((img) => {
+      const container = img.closest('.img-skeleton');
+      if (!container) return;
 
-// 7. Legacy Library Enhancements (jQuery plugins graceful integration)
-(function($) {
-  if (typeof $ === 'undefined') return;
+      const markLoaded = () => container.classList.add('is-loaded');
 
-  $(document).ready(function() {
-    // Navbar scroll state
-    $(window).scroll(function() {
-      const st = $(this).scrollTop();
-      const navbar = $('.ftco_navbar');
-      if (st > 150) {
-        if (!navbar.hasClass('scrolled')) navbar.addClass('scrolled');
+      if (img.complete && img.naturalWidth > 0) {
+        markLoaded();
       } else {
-        if (navbar.hasClass('scrolled')) navbar.removeClass('scrolled sleep');
-      }
-      if (st > 350) {
-        if (!navbar.hasClass('awake')) navbar.addClass('awake');
-      } else {
-        if (navbar.hasClass('awake')) navbar.removeClass('awake');
+        img.addEventListener('load', markLoaded, { once: true });
+        img.addEventListener('error', markLoaded, { once: true });
       }
     });
+  })();
 
-    // Image popup if magnificPopup is available
-    if ($.fn.magnificPopup) {
-      $('.image-popup').magnificPopup({
-        type: 'image',
-        closeOnContentClick: true,
-        closeBtnInside: false,
-        fixedContentPos: true,
-        mainClass: 'mfp-no-margins mfp-with-zoom',
-        gallery: { enabled: true, navigateByImgClick: true, preload: [0, 1] },
-        image: { verticalFit: true },
-        zoom: { enabled: true, duration: 300 }
+  // 2. Sticky Header Scroll Elevation & Scroll Progress Fallback
+  (function initScrollChrome() {
+    const header = document.getElementById('site-header');
+    const progressEl = document.getElementById('scroll-progress');
+    const supportsScrollTimeline =
+      typeof CSS !== 'undefined' && CSS.supports && CSS.supports('animation-timeline: scroll()');
+
+    let ticking = false;
+
+    function updateOnScroll() {
+      ticking = false;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+
+      if (header) {
+        header.classList.toggle('is-scrolled', scrollY > 16);
+      }
+
+      if (progressEl && !supportsScrollTimeline) {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+        progressEl.style.setProperty('--scroll-progress', ratio.toFixed(4));
+      }
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateOnScroll);
+        }
+      },
+      { passive: true }
+    );
+    updateOnScroll();
+  })();
+
+  // 3. Responsive Navigation (Popover on Mobile, Inline on Desktop)
+  (function initResponsiveNav() {
+    const menu = document.getElementById('site-menu');
+    const toggleBtn = document.getElementById('menu-toggle');
+    if (!menu || !toggleBtn) return;
+
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
+    const supportsPopover = Object.prototype.hasOwnProperty.call(HTMLElement.prototype, 'popover');
+
+    function syncNavMode() {
+      if (mobileQuery.matches) {
+        if (supportsPopover) {
+          menu.setAttribute('popover', 'auto');
+        }
+      } else {
+        if (supportsPopover && menu.matches(':popover-open')) {
+          menu.hidePopover();
+        }
+        menu.removeAttribute('popover');
+        menu.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    if (supportsPopover) {
+      menu.addEventListener('toggle', (event) => {
+        toggleBtn.setAttribute('aria-expanded', event.newState === 'open' ? 'true' : 'false');
+      });
+    } else {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
 
-    // Single hero slide if owlCarousel is available
-    if ($.fn.owlCarousel && $('.home-slider').length) {
-      $('.home-slider').owlCarousel({
-        loop: false,
-        autoplay: false,
-        margin: 0,
-        nav: false,
-        items: 1
+    // Close mobile menu when a link is activated
+    menu.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (mobileQuery.matches) {
+          if (supportsPopover && menu.matches(':popover-open')) {
+            menu.hidePopover();
+          } else {
+            menu.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener('change', syncNavMode);
+    } else {
+      mobileQuery.addListener(syncNavMode);
+    }
+    syncNavMode();
+  })();
+
+  // 4. Smooth Anchor Scrolling & Scrollspy
+  (function initScrollspyAndSmoothNav() {
+    const navLinks = Array.from(document.querySelectorAll('#site-menu a[href^="#"]'));
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+    navLinks.forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({
+          behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+          block: 'start',
+        });
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    const supportsScrollTargetGroup =
+      typeof CSS !== 'undefined' && CSS.supports && CSS.supports('scroll-target-group: auto');
+
+    if (supportsScrollTargetGroup) {
+      const syncAriaCurrent = () => {
+        const active = document.querySelector('#site-menu a:target-current');
+        navLinks.forEach((link) => {
+          link.setAttribute('aria-current', link === active ? 'true' : 'false');
+        });
+      };
+      syncAriaCurrent();
+      document.addEventListener('scrollend', syncAriaCurrent);
+    } else if ('IntersectionObserver' in window && sections.length) {
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const activeHref = `#${entry.target.id}`;
+            navLinks.forEach((link) => {
+              const isActive = link.getAttribute('href') === activeHref;
+              link.classList.toggle('target-current', isActive);
+              link.setAttribute('aria-current', isActive ? 'true' : 'false');
+            });
+          });
+        },
+        { rootMargin: '-25% 0px -60% 0px', threshold: 0 }
+      );
+
+      sections.forEach((sec) => spyObserver.observe(sec));
+    }
+  })();
+
+  // 5. Scroll Reveal Animations (IntersectionObserver Fallback)
+  (function initScrollReveals() {
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    if (!elements.length) return;
+
+    if (prefersReducedMotion() || !('IntersectionObserver' in window)) {
+      elements.forEach((el) => el.classList.add('is-revealed'));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -40px 0px', threshold: 0.1 }
+    );
+
+    elements.forEach((el) => revealObserver.observe(el));
+  })();
+
+  // 6. Animated Stat Counters (requestAnimationFrame)
+  (function initStatCounters() {
+    const counters = Array.from(document.querySelectorAll('.number[data-number]'));
+    if (!counters.length) return;
+
+    function animateValue(el) {
+      if (el.dataset.counted === 'true') return;
+      el.dataset.counted = 'true';
+
+      const target = parseInt(el.getAttribute('data-number'), 10) || 0;
+      if (prefersReducedMotion()) {
+        el.textContent = target.toLocaleString();
+        return;
+      }
+
+      const duration = 1100;
+      const start = performance.now();
+
+      function step(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toLocaleString();
+        }
+      }
+
+      requestAnimationFrame(step);
+      setTimeout(() => {
+        el.textContent = target.toLocaleString();
+      }, duration + 80);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(animateValue);
+      return;
+    }
+
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateValue(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    counters.forEach((el) => counterObserver.observe(el));
+  })();
+
+  // 7. Role Typing Animation with WCAG 2.2.2 Pause/Play Control
+  (function initTypingAnimation() {
+    const typingEl = document.getElementById('typing-animation');
+    const toggleBtn = document.getElementById('motion-toggle');
+    if (!typingEl) return;
+
+    const roles = [
+      'Data Analyst',
+      'Data operation analyst',
+      'Data Scientist',
+      'Business Analyst',
+      'BI Developer',
+    ];
+
+    let roleIndex = 0;
+    let charIndex = roles[0].length;
+    let isDeleting = true;
+    let isPaused = prefersReducedMotion();
+    let timerId = null;
+
+    function syncToggleUi() {
+      if (!toggleBtn) return;
+      const pauseIcon = toggleBtn.querySelector('.icon-pause');
+      const playIcon = toggleBtn.querySelector('.icon-play');
+      const label = toggleBtn.querySelector('.motion-toggle-label');
+      if (pauseIcon) pauseIcon.hidden = isPaused;
+      if (playIcon) playIcon.hidden = !isPaused;
+      if (label) label.textContent = isPaused ? 'Play' : 'Pause';
+      toggleBtn.setAttribute('aria-label', isPaused ? 'Play role animation' : 'Pause role animation');
+    }
+
+    function tick() {
+      if (isPaused) return;
+      const current = roles[roleIndex];
+
+      if (isDeleting) {
+        charIndex = Math.max(0, charIndex - 1);
+        typingEl.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          timerId = setTimeout(tick, 350);
+          return;
+        }
+        timerId = setTimeout(tick, 48);
+      } else {
+        charIndex = Math.min(current.length, charIndex + 1);
+        typingEl.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          isDeleting = true;
+          timerId = setTimeout(tick, 2000);
+          return;
+        }
+        timerId = setTimeout(tick, 95);
+      }
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        isPaused = !isPaused;
+        clearTimeout(timerId);
+        if (isPaused) {
+          typingEl.textContent = roles[roleIndex];
+        } else {
+          timerId = setTimeout(tick, 500);
+        }
+        syncToggleUi();
       });
     }
-  });
-})(typeof jQuery !== 'undefined' ? jQuery : undefined);
+
+    syncToggleUi();
+    if (!isPaused) {
+      timerId = setTimeout(tick, 1800);
+    } else {
+      typingEl.textContent = roles[0];
+    }
+  })();
+
+  // 8. Dynamic Copyright Year
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
+})();

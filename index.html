@@ -1,694 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Rasul Khan Portfolio</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasul Khan Portfolio</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&family=League+Gothic&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=League+Gothic&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&display=swap"
+      rel="stylesheet"
+    >
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <noscript>
       <style>
         #skeleton-screen { display: none !important; }
-        body.is-loading { opacity: 1 !important; }
+        .reveal-on-scroll, .ftco-animate { opacity: 1 !important; transform: none !important; }
+        .img-skeleton::after { display: none !important; }
       </style>
     </noscript>
-
-
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <!-- Client-side Skeleton Loading Screen (R3) -->
-    <div id="skeleton-screen" class="skeleton-screen" aria-hidden="false">
-      <div class="skeleton-container">
-        <div class="skeleton-nav">
-          <div class="skeleton-shimmer skeleton-logo"></div>
-          <div class="skeleton-shimmer skeleton-nav-links"></div>
+  <body>
+    <!-- Ambient Analytical Background Layer -->
+    <div class="ambient-bg" aria-hidden="true">
+      <div class="ambient-mesh ambient-mesh--top"></div>
+      <div class="ambient-mesh ambient-mesh--mid"></div>
+      <div class="ambient-grid"></div>
+      <svg class="bg-contours" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+        <path class="contour-line" d="M-80 210 C 240 120, 480 340, 820 220 C 1120 115, 1280 290, 1520 190" stroke="currentColor" stroke-width="1.2"/>
+        <path class="contour-line" d="M-80 310 C 260 220, 520 420, 860 300 C 1140 200, 1300 360, 1520 270" stroke="currentColor" stroke-width="1" stroke-dasharray="6 8"/>
+        <path class="contour-line" d="M-80 620 C 220 520, 540 720, 880 590 C 1160 480, 1320 650, 1520 560" stroke="currentColor" stroke-width="1.2"/>
+        <path class="contour-line" d="M-80 720 C 280 640, 580 810, 920 690 C 1200 590, 1340 750, 1520 670" stroke="currentColor" stroke-width="0.9"/>
+        <circle cx="820" cy="220" r="4" fill="currentColor"/>
+        <circle cx="880" cy="590" r="4" fill="currentColor"/>
+        <circle cx="380" cy="272" r="3" fill="currentColor"/>
+        <circle cx="1180" cy="245" r="3" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Client-Side Static Skeleton Loading Screen -->
+    <div id="skeleton-screen" class="skeleton-screen" aria-hidden="true">
+      <div class="skeleton-shell">
+        <div class="skeleton-topbar">
+          <div class="skeleton-shimmer skeleton-brand"></div>
+          <div class="skeleton-nav-group">
+            <div class="skeleton-shimmer skeleton-pill"></div>
+            <div class="skeleton-shimmer skeleton-pill"></div>
+            <div class="skeleton-shimmer skeleton-pill"></div>
+            <div class="skeleton-shimmer skeleton-pill"></div>
+          </div>
         </div>
-        <div class="skeleton-hero">
-          <div class="skeleton-text-col">
-            <div class="skeleton-shimmer skeleton-subheading"></div>
-            <div class="skeleton-shimmer skeleton-title"></div>
-            <div class="skeleton-shimmer skeleton-role"></div>
-            <div class="skeleton-shimmer skeleton-desc"></div>
-            <div class="skeleton-buttons">
-              <div class="skeleton-shimmer skeleton-btn"></div>
-              <div class="skeleton-shimmer skeleton-btn skeleton-btn-outline"></div>
+        <div class="skeleton-hero-grid">
+          <div class="skeleton-hero-copy">
+            <div class="skeleton-shimmer skeleton-kicker"></div>
+            <div class="skeleton-shimmer skeleton-h1"></div>
+            <div class="skeleton-shimmer skeleton-h1 skeleton-h1--short"></div>
+            <div class="skeleton-shimmer skeleton-sub"></div>
+            <div class="skeleton-cta-row">
+              <div class="skeleton-shimmer skeleton-cta"></div>
+              <div class="skeleton-shimmer skeleton-cta"></div>
             </div>
           </div>
-          <div class="skeleton-avatar-col">
-            <div class="skeleton-shimmer skeleton-avatar"></div>
+          <div class="skeleton-hero-frame">
+            <div class="skeleton-shimmer skeleton-portrait"></div>
           </div>
         </div>
       </div>
     </div>
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Rasul khan</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url('./images/portfolio background-removebg.jpg');">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate reveal-on-scroll" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!👋</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Rasul Khan</span></h1>
+    <!-- Primary Site Header & Navigation -->
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="navbar-brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Rasul khan</span>
+        </a>
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
+        <nav class="site-nav" aria-label="Primary">
+          <button
+            class="menu-button"
+            type="button"
+            id="menu-toggle"
+            popovertarget="site-menu"
+            popovertargetaction="toggle"
+            aria-controls="site-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+            <span>Menu</span>
+          </button>
 
-						<script>
+          <ul id="site-menu" class="site-menu">
+            <li><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+            <li><a href="#about-section" class="nav-link"><span>About</span></a></li>
+            <li><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+            <li><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+            <li><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section id="home-section" class="hero-section" tabindex="-1">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-on-scroll ftco-animate">
+            <span class="subheading hero-greeting">Hello!👋</span>
+            <h1 class="hero-title">I'm <span>Rasul Khan</span></h1>
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Data Analyst',
-						'Data operation analyst',
-						'Data Scientist',
-						'Business Analyst',
-						'BI Developer',
-						];
+            <div class="typing-row">
+              <div class="typing-box" aria-live="polite">
+                <span id="typing-animation">Data Analyst</span><span class="typing-caret" aria-hidden="true"></span>
+              </div>
+              <button
+                type="button"
+                id="motion-toggle"
+                class="motion-toggle"
+                aria-label="Pause role animation"
+                title="Pause or resume role animation"
+              >
+                <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <rect x="6" y="5" width="4" height="14" rx="1"/>
+                  <rect x="14" y="5" width="4" height="14" rx="1"/>
+                </svg>
+                <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden>
+                  <polygon points="6,4 20,12 6,20"/>
+                </svg>
+                <span class="motion-toggle-label">Pause</span>
+              </button>
+            </div>
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+            <h2 class="hero-role">Data Analyst</h2>
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>Data Analyst</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/rasul-khan-a-101624296" class="btn btn-primary py-3 px-4">Linked In</a> 
-							<a href="https://github.com/Rasulajees" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="./images/picture.png" class="img-fluid rounded b-shadow-a" alt="Rasul Khan">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Rasul khan</span></p>
-										<p><span class="title-s">Job Role: </span> <span>Data Analyst</span></p>
-										<p><span class="title-s">Experience: </span> <span>Fresher</span></p>
-										<p><span class="title-s">Address: </span> <span>Villupuram, Tamil Nadu, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf">
-									<h2 class="mb-4">Skills:</h2>
-									<span>SQL</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>PYTHON</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Data Visualization</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Microsoft Power BI</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Tableau</span> <span class="pull-right">73%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-
-									<span>Excel</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-
-									<span>Microsoft Tools</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About Me</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>As a Data Analyst Fresher with a bachelor’s degree in mathematics on Annamalai University. I have a strong foundation in data
-									analysis, statistical techniques, hypothesis testing, and customer behavior analysis. My academic 
-									background has equipped me with the ability to work with complex datasets, derive meaningful insights, 
-									and apply mathematical models to solve real-world problems. I am eager to contribute to data-driven decision-making, 
-									develop expertise in machine learning, and collaborate on impactful projects that enhance business intelligence.
-</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Data Science, Analytics, SQL Developer, Tableau Developer, Business Analyst, Data operation analyst  &amp; BI Developer</span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Retail, E-commerce &amp; Data Analysis</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Mathematics</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Tamil, Urdu, Hindi &amp; Arabic</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI, Google looker  &amp; Tableau</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>Python, Excel, GitHub, Google Analytics, My SQL, Jupiter notebook, Google Collab &amp; Microsoft SQL Management Studio, Microsoft Outlook,Microsoft Tolls, Google sheet</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Countinous Learning, Traveling, Upgrading Skills, Listerning Songs, Watching Cartoons</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="10">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/rasul-khan-a-101624296/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Motivated Data Analyst Fresher with a strong foundation in data analysis, 
-				statistical techniques, and machine learning concepts. Passionate about leveraging data-driven insights 
-				to support business decision-making and optimize strategies. Eager to apply analytical skills, problem-solving abilities, 
-				and technical expertise in a professional setting to grow within the field of data analytics
-</p>
-          </div>
-        </div>
-
-			
-			
-		<br>
-		<br>
-
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2021-2024</span>
-    					<h2>Bachelor of Mathematics</h2>
-    					<span class="position">Annamalai University</span>
-    					<p class="mt-4">Grade: First class</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2019-2021</span>
-    					<h2>Higher Secondary (HSC)</h2>
-    					<span class="position">Murthuzaviya Higher Secondary School</span>
-    					<p class="mt-4">Grade: First class</p>
-    				</div>
-				</div>
-    		</div>
-
-					<div class="row">
-			<h1 class="big-4">Courses</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">02/2025-05/2025</span>
-    					<h2>AI & DATA SCIENTIST</h2>
-    					<span class="position">National Skill Development Corporation (NSDC)</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-    				</div>
-
-			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Jun 2025</span>
-    					<h2>Machine Learning with Python Foundations</h2>
-    					<span class="position">LinkedIn Learning</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-    				</div>
-
-			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Jun 2025</span>
-    					<h2>Introduction to career skills in Data analytics</h2>
-    					<span class="position">LinkedIn Learning</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-    				</div>
-
-			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Jun 2025</span>
-    					<h2>JioHotstar Sports analytics Using Python: IPL Dataset</h2>
-    					<span class="position">Codingninjas</span>
-    					<p class="mt-4">Grade: B</p>
-    				</div>
-    				</div>
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2021-2022</span>
-    					<h2>CLP(Computer Literacy Programme)</h2>
-    					<span class="position">Annamalai University</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-    				</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2020-2021</span>
-    					<h2>DTP(Desktop Publishing)</h2>
-    					<span class="position">Murthuzaviya Charitable Trust</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-				</div>
-
-				<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2019-2020</span>
-    					<h2>Diploma in Urdu Language</h2>
-    					<span class="position">Murthuzaviya Charitable Trust</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-				</div>
-
-				<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2016-2018</span>
-    					<h2>Diploma in Calligraphy And Graphic Designing</h2>
-    					<span class="position">Murthuzaviya Charitable Trust</span>
-    					<p class="mt-4">Grade: B</p>
-    				</div>
-				</div>
-
-				<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">09/2023-10/2023</span>
-    					<h2>UNXT Soft Skill Program</h2>
-    					<span class="position">Organized By Infosys foundation</span>
-    					<p class="mt-4">Grade: A</p>
-    				</div>
-				</div>
-
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Resume.pdf" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample Data Analytics projects on SQL, Python, Power BI & ML.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis" class="block-20 zoom-effect" style="background-image: url('./images/Spotify_Dashboard.png');">
+            <div class="hero-actions">
+              <a
+                href="https://www.linkedin.com/in/rasul-khan-a-101624296"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Linked In</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10"/>
+                </svg>
               </a>
-              <div class="text mt-3 float-right d-block">
+              <a
+                href="https://github.com/Rasulajees"
+                class="btn btn-outline-coral"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>My works</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
 
-                <h3 class="heading"><a href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis">Spotify Global Streaming Analysis</a></h3>
+          <div class="hero-visual reveal-on-scroll ftco-animate">
+            <div class="portrait-card">
+              <div class="portrait-card-bar">
+                <span class="coord-dot" aria-hidden="true"></span>
+                <span class="coord-label">PORTFOLIO // ANALYTICS</span>
+              </div>
+              <div class="portrait-stage img-skeleton">
+                <img
+                  src="./images/portfolio background-removebg.jpg"
+                  alt="Rasul Khan"
+                  width="1500"
+                  height="1715"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+              </div>
+              <div class="portrait-card-foot">
+                <span>Villupuram, Tamil Nadu</span>
+                <span>B.Sc. Mathematics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about-section" class="section about-section" tabindex="-1">
+        <div class="container">
+          <div class="about-grid">
+            <!-- Left Column: Profile Card + Skills -->
+            <aside class="about-sidebar reveal-on-scroll ftco-animate">
+              <div class="profile-card">
+                <div class="profile-header">
+                  <div class="about-img img-skeleton">
+                    <img
+                      src="./images/picture.png"
+                      alt="Rasul Khan"
+                      width="672"
+                      height="1449"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </div>
+                  <div class="about-info">
+                    <p><span class="title-s">Name: </span> <span>Rasul khan</span></p>
+                    <p><span class="title-s">Job Role: </span> <span>Data Analyst</span></p>
+                    <p><span class="title-s">Experience: </span> <span>Fresher</span></p>
+                    <p><span class="title-s">Address: </span> <span>Villupuram, Tamil Nadu, India</span></p>
+                  </div>
+                </div>
+
+                <div class="skill-mf">
+                  <h2 class="skills-heading">Skills:</h2>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>SQL</span>
+                      <span class="skill-pct">75%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 75%; --skill-val: 0.75;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="SQL 75%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>PYTHON</span>
+                      <span class="skill-pct">80%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 80%; --skill-val: 0.80;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="PYTHON 80%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>Data Visualization</span>
+                      <span class="skill-pct">90%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 90%; --skill-val: 0.90;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Data Visualization 90%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>Microsoft Power BI</span>
+                      <span class="skill-pct">75%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 75%; --skill-val: 0.75;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Microsoft Power BI 75%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>Tableau</span>
+                      <span class="skill-pct">73%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 73%; --skill-val: 0.73;" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" aria-label="Tableau 73%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>Excel</span>
+                      <span class="skill-pct">85%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 85%; --skill-val: 0.85;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Excel 85%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-label-row">
+                      <span>Microsoft Tools</span>
+                      <span class="skill-pct">95%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 95%; --skill-val: 0.95;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Microsoft Tools 95%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Right Column: Narrative, Metadata, Counter -->
+            <div class="about-main reveal-on-scroll ftco-animate">
+              <div class="section-heading">
+                <span class="big-watermark" aria-hidden="true">About Me</span>
+                <h2>About Me</h2>
+              </div>
+
+              <p class="about-bio">
+                As a Data Analyst Fresher with a bachelor’s degree in mathematics on Annamalai University. I have a strong foundation in data
+                analysis, statistical techniques, hypothesis testing, and customer behavior analysis. My academic
+                background has equipped me with the ability to work with complex datasets, derive meaningful insights,
+                and apply mathematical models to solve real-world problems. I am eager to contribute to data-driven decision-making,
+                develop expertise in machine learning, and collaborate on impactful projects that enhance business intelligence.
+              </p>
+
+              <ul class="about-meta-list">
+                <li><span class="meta-key">Profile:</span> <span class="meta-val">Data Science, Analytics, SQL Developer, Tableau Developer, Business Analyst, Data operation analyst  &amp; BI Developer</span></li>
+                <li><span class="meta-key">Domain:</span> <span class="meta-val">Retail, E-commerce &amp; Data Analysis</span></li>
+                <li><span class="meta-key">Education:</span> <span class="meta-val">Bachelor of Mathematics</span></li>
+                <li><span class="meta-key">Language:</span> <span class="meta-val">English, Tamil, Urdu, Hindi &amp; Arabic</span></li>
+                <li><span class="meta-key">BI Tools:</span> <span class="meta-val">Microsoft Power BI, Google looker  &amp; Tableau</span></li>
+                <li><span class="meta-key">Other Skills:</span> <span class="meta-val">Python, Excel, GitHub, Google Analytics, My SQL, Jupiter notebook, Google Collab &amp; Microsoft SQL Management Studio, Microsoft Outlook,Microsoft Tolls, Google sheet</span></li>
+                <li><span class="meta-key">Interest:</span> <span class="meta-val">Countinous Learning, Traveling, Upgrading Skills, Listerning Songs, Watching Cartoons</span></li>
+              </ul>
+
+              <div class="about-footer-bar">
+                <div class="about-counter">
+                  <span class="number" data-number="10">0</span><span class="plus-sign">+</span>
+                  <span class="counter-caption">&nbsp; Projects completed</span>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/rasul-khan-a-101624296/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>LinkedIn</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESUME SECTION -->
+      <section id="resume-section" class="section resume-section" tabindex="-1">
+        <div class="container">
+          <div class="section-heading section-heading--center reveal-on-scroll ftco-animate">
+            <span class="big-watermark" aria-hidden="true">Resume</span>
+            <h2>Resume</h2>
+            <p class="section-lead">
+              Motivated Data Analyst Fresher with a strong foundation in data analysis,
+              statistical techniques, and machine learning concepts. Passionate about leveraging data-driven insights
+              to support business decision-making and optimize strategies. Eager to apply analytical skills, problem-solving abilities,
+              and technical expertise in a professional setting to grow within the field of data analytics
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="resume-group">
+            <div class="subsection-header reveal-on-scroll ftco-animate">
+              <h3 class="subsection-title">Education</h3>
+              <div class="underline" aria-hidden="true"></div>
+            </div>
+
+            <div class="resume-grid resume-grid--two">
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2021-2024</span>
+                <h4>Bachelor of Mathematics</h4>
+                <span class="position">Annamalai University</span>
+                <p class="grade-line">Grade: First class</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2019-2021</span>
+                <h4>Higher Secondary (HSC)</h4>
+                <span class="position">Murthuzaviya Higher Secondary School</span>
+                <p class="grade-line">Grade: First class</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Courses -->
+          <div class="resume-group">
+            <div class="subsection-header reveal-on-scroll ftco-animate">
+              <h3 class="subsection-title">Courses</h3>
+              <div class="underline" aria-hidden="true"></div>
+            </div>
+
+            <div class="resume-grid resume-grid--three">
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">02/2025-05/2025</span>
+                <h4>AI &amp; DATA SCIENTIST</h4>
+                <span class="position">National Skill Development Corporation (NSDC)</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">Jun 2025</span>
+                <h4>Machine Learning with Python Foundations</h4>
+                <span class="position">LinkedIn Learning</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">Jun 2025</span>
+                <h4>Introduction to career skills in Data analytics</h4>
+                <span class="position">LinkedIn Learning</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">Jun 2025</span>
+                <h4>JioHotstar Sports analytics Using Python: IPL Dataset</h4>
+                <span class="position">Codingninjas</span>
+                <p class="grade-line">Grade: B</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2021-2022</span>
+                <h4>CLP(Computer Literacy Programme)</h4>
+                <span class="position">Annamalai University</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2020-2021</span>
+                <h4>DTP(Desktop Publishing)</h4>
+                <span class="position">Murthuzaviya Charitable Trust</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2019-2020</span>
+                <h4>Diploma in Urdu Language</h4>
+                <span class="position">Murthuzaviya Charitable Trust</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">2016-2018</span>
+                <h4>Diploma in Calligraphy And Graphic Designing</h4>
+                <span class="position">Murthuzaviya Charitable Trust</span>
+                <p class="grade-line">Grade: B</p>
+              </article>
+
+              <article class="resume-wrap reveal-on-scroll ftco-animate">
+                <span class="date">09/2023-10/2023</span>
+                <h4>UNXT Soft Skill Program</h4>
+                <span class="position">Organized By Infosys foundation</span>
+                <p class="grade-line">Grade: A</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="resume-cta reveal-on-scroll ftco-animate">
+            <a
+              href="https://github.com/Rasulajees/Rasul_khan/blob/main/Resume.pdf"
+              class="btn btn-primary btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Download CV</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="project-section" class="section project-section" tabindex="-1">
+        <div class="container">
+          <div class="section-heading section-heading--center reveal-on-scroll ftco-animate">
+            <span class="big-watermark" aria-hidden="true">Projects</span>
+            <h2>Projects</h2>
+            <p class="section-lead">Below are the sample Data Analytics projects on SQL, Python, Power BI &amp; ML.</p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/Spotify_Dashboard.png"
+                  alt="Spotify Global Streaming Analysis dashboard preview"
+                  width="1395"
+                  height="790"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis" target="_blank" rel="noopener noreferrer">
+                    Spotify Global Streaming Analysis
+                  </a>
+                </h3>
                 <p>Analyzed Spotify Global Streaming data using advanced Python queries to identify gap and increase the business growth.</p>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project" class="block-20 zoom-effect" style="background-image: url('./images/proj_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+            </article>
 
-                <h3 class="heading"><a href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project">Diwali Sales Analysis</a></h3>
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/proj_2.jpg"
+                  alt="Diwali Sales Analysis preview"
+                  width="1200"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project" target="_blank" rel="noopener noreferrer">
+                    Diwali Sales Analysis
+                  </a>
+                </h3>
                 <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-          	<div class="blog-entry">
-              <a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png" class="block-20 zoom-effect" style="background-image: url('./images/student.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+            </article>
 
-                <h3 class="heading"><a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png">Power BI Yearly student fees dashboard </a></h3>
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/student.jpg"
+                  alt="Power BI Yearly student fees dashboard preview"
+                  width="626"
+                  height="417"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png" target="_blank" rel="noopener noreferrer">
+                    Power BI Yearly student fees dashboard
+                  </a>
+                </h3>
                 <p>Designed a power bi Yearly_student_fees analysis to track and analyze the online data acorss India.</p>
               </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Zomato-project-using-power-bi"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/Screenshot 2025-05-19 115040.png"
+                  alt="Zomato sales Analysis Using Power BI dashboard preview"
+                  width="1738"
+                  height="810"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Zomato-project-using-power-bi" target="_blank" rel="noopener noreferrer">
+                    Zomato sales Analysis Using Power BI
+                  </a>
+                </h3>
+                <p>
+                  This dashboard provides an analytical overview of Zomato's operations, highlighting key metrics related to orders, ratings, revenue, and city-wise performance. It details service availability across 150,281 cities, connecting with 100,000 partners and fulfilling 150,281 orders
+                  analysis.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/SQL.jpg"
+                  alt="Advanced Data Warehouse Analysis preview"
+                  width="1200"
+                  height="686"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT" target="_blank" rel="noopener noreferrer">
+                    Advanced Data Warehouse Analysis
+                  </a>
+                </h3>
+                <p>
+                  Advanced Analytics Data Warehouse Project This project sets up a SQL Server-based Data Warehouse for analytical reporting.
+                  It demonstrates the full cycle from database creation to data ingestion using BULK INSERT.
+                  The warehouse includes dimension and fact tables optimized for advanced data analytics tasks.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Retail_sales_sql_project"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/123.jpg"
+                  alt="Retail Sales Analysis Using SQL preview"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Retail_sales_sql_project" target="_blank" rel="noopener noreferrer">
+                    Retail Sales Analysis Using SQL
+                  </a>
+                </h3>
+                <p>This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data.</p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/Customer_shipping.jpg"
+                  alt="Customer Shipping Analysis preview"
+                  width="612"
+                  height="408"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI" target="_blank" rel="noopener noreferrer">
+                    Customer Shipping Analysis
+                  </a>
+                </h3>
+                <p>
+                  This project represents a complete, industry standard, end-to-end data analytics workflow, designed to mirror the real responsibilities of
+                  professional analysts in modern business environments. The project encompasses all critical stages of data analysis,
+                  from data preparation and modeling to insight generation, visualization, and reporting..
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Indian-crime-SQL-analysis"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/Crime rate.png"
+                  alt="Indian Crime Analysis preview"
+                  width="768"
+                  height="431"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Indian-crime-SQL-analysis" target="_blank" rel="noopener noreferrer">
+                    Indian Crime Analysis
+                  </a>
+                </h3>
+                <p>
+                  Indian Crime SQL Analysis This repository presents a data-driven exploration of crime patterns across India using SQL.
+                  The insights are compiled into a structured PowerPoint presentation that blends technical rigor with visual storytelling.
+                  The project demonstrates how SQL can be leveraged to extract, analyze, and communicate complex public safety data in a clear and actionable format.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll ftco-animate">
+              <a
+                href="https://github.com/Rasulajees/Swiggy-sales"
+                class="project-thumb img-skeleton"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./images/swigy.png"
+                  alt="Swiggy Sales Analysis preview"
+                  width="474"
+                  height="316"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <div class="project-body">
+                <h3 class="heading">
+                  <a href="https://github.com/Rasulajees/Swiggy-sales" target="_blank" rel="noopener noreferrer">
+                    Swiggy Sales Analysis
+                  </a>
+                </h3>
+                <p>
+                  This project focuses on analyzing Swiggy's sales data using SQL. The goal was to derive meaningful insights that can guide business decisions.
+                  It involved working with multiple tables and executing complex SQL queries, including joins, aggregations, and subqueries.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COUNTERS & GITHUB CALLOUT -->
+      <section id="section-counter" class="section counter-section" tabindex="-1">
+        <div class="container">
+          <div class="counters-grid">
+            <div class="counter-card reveal-on-scroll ftco-animate">
+              <strong class="number" data-number="20">0</strong>
+              <span>Achievements</span>
+            </div>
+            <div class="counter-card reveal-on-scroll ftco-animate">
+              <strong class="number" data-number="10">0</strong>
+              <span>Projects</span>
+            </div>
+            <div class="counter-card reveal-on-scroll ftco-animate">
+              <strong class="number" data-number="15">0</strong>
+              <span>Cups of coffee</span>
+            </div>
+          </div>
+
+          <div class="ftco-hireme reveal-on-scroll ftco-animate">
+            <div class="hireme-bg" style="background-image: url('./images/bg_1.jpg');" aria-hidden="true"></div>
+            <div class="hireme-content">
+              <h2>More projects on <span>Github</span></h2>
+              <p class="hireme-sub">I love to solve business problems &amp; uncover hidden data stories</p>
+              <a
+                href="https://github.com/Rasulajees"
+                class="btn btn-primary btn-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>GitHub</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Zomato-project-using-power-bi" class="block-20 zoom-effect" style="background-image: url('./images/Screenshot 2025-05-19 115040.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/Zomato-project-using-power-bi">Zomato sales Analysis Using Power BI</a></h3>
-				  <p> This dashboard provides an analytical overview of Zomato's operations, highlighting key metrics related to orders, ratings, revenue, and city-wise performance. It details service availability across 150,281 cities, connecting with 100,000 partners and fulfilling 150,281 orders
-					analysis.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT" class="block-20 zoom-effect" style="background-image: url('./images/SQL.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT">Advanced Data Warehouse Analysis</a></h3>
-				  <p>Advanced Analytics Data Warehouse Project This project sets up a SQL Server-based Data Warehouse for analytical reporting. 
-					It demonstrates the full cycle from database creation to data ingestion using BULK INSERT.
-					The warehouse includes dimension and fact tables optimized for advanced data analytics tasks.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Retail_sales_sql_project" class="block-20 zoom-effect" style="background-image: url('./images/123.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/Retail_sales_sql_project">Retail Sales Analysis Using SQL</a></h3>
-				  <p>This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI" class="block-20 zoom-effect" style="background-image: url('./images/Customer_shipping.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI">Customer Shipping Analysis</a></h3>
-				  <p>This project represents a complete, industry standard, end-to-end data analytics workflow, designed to mirror the real responsibilities of 
-					  professional analysts in modern business environments. The project encompasses all critical stages of data analysis, 
-					  from data preparation and modeling to insight generation, visualization, and reporting..</p>
-				</div>
-			  </div>
-			</div>
+      </section>
 
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Indian-crime-SQL-analysis" class="block-20 zoom-effect" style="background-image: url('./images/Crime rate.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/Indian-crime-SQL-analysis">Indian Crime Analysis</a></h3>
-				  <p>Indian Crime SQL Analysis This repository presents a data-driven exploration of crime patterns across India using SQL. 
-					  The insights are compiled into a structured PowerPoint presentation that blends technical rigor with visual storytelling. 
-					  The project demonstrates how SQL can be leveraged to extract, analyze, and communicate complex public safety data in a clear and actionable format.</p>
-				</div>
-			  </div>
-			</div>
+      <!-- CONTACT SECTION -->
+      <section id="contact-section" class="section contact-section" tabindex="-1">
+        <div class="container">
+          <div class="section-heading section-heading--center reveal-on-scroll ftco-animate">
+            <span class="big-watermark" aria-hidden="true">Contact Me</span>
+            <h2>Contact Me</h2>
+            <p class="section-lead">Below are the details to reach out to me!</p>
+          </div>
 
-			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Swiggy-sales" class="block-20 zoom-effect" style="background-image: url('./images/swigy.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Rasulajees/Swiggy-sales">Swiggy Sales Analysis </a></h3>
-				  <p>This project focuses on analyzing Swiggy's sales data using SQL. The goal was to derive meaningful insights that can guide business decisions. 
-					  It involved working with multiple tables and executing complex SQL queries, including joins, aggregations, and subqueries.</p>
-				</div>
-			  </div>
-			</div>
+          <div class="contact-grid">
+            <div class="contact-card reveal-on-scroll ftco-animate">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <h3>Address</h3>
+              <p>villupuram, Tamil Nadu</p>
+            </div>
+
+            <div class="contact-card reveal-on-scroll ftco-animate">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h3>Contact Number</h3>
+              <p><a href="tel:+918015429078">+91 8015429078</a></p>
+            </div>
+
+            <div class="contact-card reveal-on-scroll ftco-animate">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <h3>Email Address</h3>
+              <p><a href="mailto:rasulkhanoffi@gmail.com">rasulkhanoffi@gmail.com</a></p>
+            </div>
+
+            <div class="contact-card reveal-on-scroll ftco-animate">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <h3>Resume</h3>
+              <p class="contact-resume-wrap">
+                <a
+                  href="https://github.com/Rasulajees/Rasul_khan/blob/main/RESUME%20.pdf.pdf"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Resume</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="inquiry-banner reveal-on-scroll ftco-animate">
+            <h3 class="inquiry-title">Have any <span>Question?</span></h3>
+            <a
+              href="https://forms.office.com/r/i4Jn03sCx8?origin=lprLink/"
+              class="btn btn-primary btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Click Here</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7M7 7h10v10"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="social-bar reveal-on-scroll ftco-animate">
+            <span class="social-label">Find me on</span>
+            <ul class="social-list">
+              <li>
+                <a href="https://www.linkedin.com/in/rasul-khan-a-101624296/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Rasulajees/Rasul_khan" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/__mr.rasul_official/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/mr_rasuloffi/" aria-label="Snapchat" target="_blank" rel="noopener noreferrer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2c3.2 0 5.4 2.2 5.4 5.6 0 1-.2 1.9-.2 2.2.4.2.9.3 1.4.2.4 0 .7.3.7.7 0 .5-.5.9-1.2 1.1-.4.1-.7.4-.6.8.5 1.7 1.8 2.9 3.6 3.4.5.1.8.6.6 1.1-.2.5-.9.9-2.1 1.1-.4.1-.6.4-.7.8-.2.7-.8 1-1.6.9-.8-.1-1.6-.4-2.5-.4-.9 0-1.7.6-2.8.6s-1.9-.6-2.8-.6c-.9 0-1.7.3-2.5.4-.8.1-1.4-.2-1.6-.9-.1-.4-.3-.7-.7-.8-1.2-.2-1.9-.6-2.1-1.1-.2-.5.1-1 .6-1.1 1.8-.5 3.1-1.7 3.6-3.4.1-.4-.2-.7-.6-.8-.7-.2-1.2-.6-1.2-1.1 0-.4.3-.7.7-.7.5.1 1 0 1.4-.2 0-.3-.2-1.2-.2-2.2C6.6 4.2 8.8 2 12 2z"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-	<br>
-		 </div>
-	  </div>
-    </section>
+      </section>
+    </main>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="15">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<span id="copyright-year">2026</span> All rights reserved | This template is made with
+          <span class="footer-heart" aria-label="love">&hearts;</span>
+          by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
       </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url('./images/bg_1.jpg')">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/Rasulajees" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
+    </footer>
 
-
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact Me</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p> villupuram, Tamil Nadu</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel:+918015429078">+91 8015429078</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:rasulkhanoffi@gmail.com">rasulkhanoffi@gmail.com </a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-			<a href="https://github.com/Rasulajees/Rasul_khan/blob/main/RESUME%20.pdf.pdf"
-                                class="py-16 my-16 shadow-none btn btn-dark my-lg-24 px-30">Resume <i
-                                    class="bi bi-download ms-6"></i></a>
-	          </div>
-          </div>
-
-		  <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have any<span> Question?  </span> <a href="https://forms.office.com/r/i4Jn03sCx8?origin=lprLink/" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/rasul-khan-a-101624296/"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://github.com/Rasulajees/Rasul_khan"><span class="icon-github"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/__mr.rasul_official/"><span class="icon-instagram"></span></a></li>
-					  <li class="ftco-animate"><a href="https://www.snapchat.com/mr_rasuloffi/"><span class="icon-snapchat"></span></a></li>
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
-
-
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#38bdf8"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
+    <script defer src="./js/main.js"></script>
   </body>
 </html>
