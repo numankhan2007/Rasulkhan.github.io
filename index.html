@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&family=League+Gothic&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -22,99 +24,40 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-
-<style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
-
-
-/* project image zoom effect */
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-
-</style>
+    <noscript>
+      <style>
+        #skeleton-screen { display: none !important; }
+        body.is-loading { opacity: 1 !important; }
+      </style>
+    </noscript>
 
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <!-- Client-side Skeleton Loading Screen (R3) -->
+    <div id="skeleton-screen" class="skeleton-screen" aria-hidden="false">
+      <div class="skeleton-container">
+        <div class="skeleton-nav">
+          <div class="skeleton-shimmer skeleton-logo"></div>
+          <div class="skeleton-shimmer skeleton-nav-links"></div>
+        </div>
+        <div class="skeleton-hero">
+          <div class="skeleton-text-col">
+            <div class="skeleton-shimmer skeleton-subheading"></div>
+            <div class="skeleton-shimmer skeleton-title"></div>
+            <div class="skeleton-shimmer skeleton-role"></div>
+            <div class="skeleton-shimmer skeleton-desc"></div>
+            <div class="skeleton-buttons">
+              <div class="skeleton-shimmer skeleton-btn"></div>
+              <div class="skeleton-shimmer skeleton-btn skeleton-btn-outline"></div>
+            </div>
+          </div>
+          <div class="skeleton-avatar-col">
+            <div class="skeleton-shimmer skeleton-avatar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -141,10 +84,10 @@
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/portfolio%20background-removebg.jpg?raw=true');">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url('./images/portfolio background-removebg.jpg');">
 	          	 <div class="overlay"></div>
 	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          <div class="one-forth d-flex  align-items-center ftco-animate reveal-on-scroll" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hello!👋</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Rasul Khan</span></h1>
@@ -215,7 +158,7 @@
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/picture.png?raw=true" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="./images/picture.png" class="img-fluid rounded b-shadow-a" alt="Rasul Khan">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
@@ -474,9 +417,9 @@
           </div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
+          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis" class="block-20 zoom-effect" style="background-image: url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/Spotify_Dashboard.png?raw=true');">
+              <a href="https://github.com/Rasulajees/Python_Power_Bi_Spotify_Global_streaming_analysis" class="block-20 zoom-effect" style="background-image: url('./images/Spotify_Dashboard.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -485,9 +428,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
+          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              <a href="https://github.com/Rasulajees/Python_Diwali-sales-Analysis-Project" class="block-20 zoom-effect" style="background-image: url('./images/proj_2.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -496,9 +439,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
+          <div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
           	<div class="blog-entry">
-              <a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png" class="block-20 zoom-effect" style="background-image: url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/student.jpg?raw=true');">
+              <a href="https://github.com/Rasulajees/Rasul_khan/blob/main/Yearly_student_fees_dashboard.png" class="block-20 zoom-effect" style="background-image: url('./images/student.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -511,9 +454,9 @@
 	<br>
 		<!-- added justify-content-center to center align the last two projects -->
 		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Zomato-project-using-power-bi" class="block-20 zoom-effect" style="background-image: url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/Screenshot%202025-05-19%20115040.png?raw=true');">
+				<a href="https://github.com/Rasulajees/Zomato-project-using-power-bi" class="block-20 zoom-effect" style="background-image: url('./images/Screenshot 2025-05-19 115040.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
@@ -523,9 +466,9 @@
 				</div>
 			  </div>
 			</div>
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT" class="block-20 zoom-effect" style="background-image: url('https://raw.githubusercontent.com/Rasulajees/Rasulkhan.github.io/main/images/SQL.jpg?raw=true');">
+				<a href="https://github.com/Rasulajees/MSSQL_EXPLORATORY_DATA_ANALYSIS_PROJECT" class="block-20 zoom-effect" style="background-image: url('./images/SQL.jpg');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
@@ -536,9 +479,9 @@
 				</div>
 			  </div>
 			</div>
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Retail_sales_sql_projectT" class="block-20 zoom-effect" style="background-image: url('https://raw.githubusercontent.com/Rasulajees/Rasulkhan.github.io/main/images/123.jpg');">
+				<a href="https://github.com/Rasulajees/Retail_sales_sql_project" class="block-20 zoom-effect" style="background-image: url('./images/123.jpg');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
@@ -547,9 +490,9 @@
 				</div>
 			  </div>
 			</div>
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI" class="block-20 zoom-effect" style="background-image: url('https://raw.githubusercontent.com/Rasulajees/Rasulkhan.github.io/main/images/Customer_shipping.jpg');">
+				<a href="https://github.com/Rasulajees/-customer-shipping-behaviour-data-analysis-SQL-Python-Power-BI" class="block-20 zoom-effect" style="background-image: url('./images/Customer_shipping.jpg');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
@@ -561,13 +504,13 @@
 			  </div>
 			</div>
 
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="hhttps://github.com/Rasulajees/Indian-crime-SQL-analysis" class="block-20 zoom-effect" style="background-image: url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/Crime rate.png?raw=true');">
+				<a href="https://github.com/Rasulajees/Indian-crime-SQL-analysis" class="block-20 zoom-effect" style="background-image: url('./images/Crime rate.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
-				  <h3 class="heading"><a href="hhttps://github.com/Rasulajees/Indian-crime-SQL-analysis">Indian Crime Analysis</a></h3>
+				  <h3 class="heading"><a href="https://github.com/Rasulajees/Indian-crime-SQL-analysis">Indian Crime Analysis</a></h3>
 				  <p>Indian Crime SQL Analysis This repository presents a data-driven exploration of crime patterns across India using SQL. 
 					  The insights are compiled into a structured PowerPoint presentation that blends technical rigor with visual storytelling. 
 					  The project demonstrates how SQL can be leveraged to extract, analyze, and communicate complex public safety data in a clear and actionable format.</p>
@@ -575,9 +518,9 @@
 			  </div>
 			</div>
 
-			<div class="col-md-4 d-flex ftco-animate">
+			<div class="col-md-4 d-flex ftco-animate reveal-on-scroll">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Rasulajees/Swiggy-sales" class="block-20 zoom-effect" style="background-image: url('https://github.com/Rasulajees/Rasulkhan.github.io/blob/main/images/swigy.png?raw=true');">
+				<a href="https://github.com/Rasulajees/Swiggy-sales" class="block-20 zoom-effect" style="background-image: url('./images/swigy.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
   
@@ -624,7 +567,7 @@
         </div>
       </div>
 	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url('./images/bg_1.jpg')">
 			<!-- <div class="container"> -->
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
@@ -667,7 +610,7 @@
           			<span class="icon-phone2"></span>
           		</div>
           		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 8015429078</a></p>
+	            <p><a href="tel:+918015429078">+91 8015429078</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -676,7 +619,7 @@
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">rasulkhanoffi@gmail.com </a></p>
+	            <p><a href="mailto:rasulkhanoffi@gmail.com">rasulkhanoffi@gmail.com </a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -729,7 +672,7 @@
 
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#38bdf8"/></svg></div>
 
 
   <script src="js/jquery.min.js"></script>
